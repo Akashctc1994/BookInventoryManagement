@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <script type="text/javascript">
+        $(function () {
+            $('#urlddl').change(function () {
+                var url = $(this).val();
+                if (url != null && url != '') {
+                    window.location.href = url;
+                }
+            });
+        });
+    </script>
+    <style>
+        body{
+            width:50%;
+            margin:auto;
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <table class="table" >
+            <tr>
+                <td><h2>Book Inventory Management</h2></td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.Label("Select Operation :")
+                    @Html.DropDownList("url", new SelectList(new[]{
+                new SelectListItem { Text = "Add New", Value = Url.Action("AddNew") },
+                new SelectListItem { Text = "Search", Value = Url.Action("Search") },
+                new SelectListItem { Text = "Modify", Value = Url.Action("Modify") },}, "Value", "Text"),
+                "-- Select ---", new { id = "urlddl" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @RenderBody()
+                </td>
+            </tr>
+            <tr>
+                <td>Copy Right - 2020</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

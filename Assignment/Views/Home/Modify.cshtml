@@ -1,0 +1,33 @@
+﻿@using Assignment.Models;
+@model List<Books>
+@{
+    ViewBag.Title = "Modify";
+    Layout = "~/Views/_DemoLayout.cshtml";
+}
+<table class="table table-bordered table-striped table-hover">
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>ISBN</th>
+        <th>Publisher</th>
+        <th>Year</th>
+        <th>Modifing Operations</th>
+    </tr>
+    @{ 
+        foreach(Books items in Model)
+        {
+            <tr>
+                <td>@items.Titles</td>
+                <td>@items.Author</td>
+                <td>@items.ISBN</td>
+                <td>@items.Publisher</td>
+                <td>@items.Year</td>
+                <td>
+                    <a href="/Home/Details/@items.Id">Details</a>
+                    <a href="/Home/Edit/@items.Id">Edit</a>
+                    <a href="/Home/Delete/@items.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    }
+</table>

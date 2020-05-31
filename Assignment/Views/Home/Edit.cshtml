@@ -1,0 +1,88 @@
+﻿@model Assignment.Models.Books
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <title>Edit</title>
+    <style>
+        body{
+            width:40%;
+            margin:auto;
+        }
+        h2{
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+        <h2>Edit Books Details</h2>
+        <hr />
+        @using (Html.BeginForm())
+        {
+            <table class="table" align="center">
+                <tr>
+                    <td>
+                        @Html.Label("Title :")
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(m => m.Titles)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.Label("Author :")
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(m => m.Author)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.Label("ISBN :")
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(m => m.ISBN)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.Label("Publisher :")
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(m => m.Publisher)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.Label("Year :")
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(m => m.Year)
+                    </td>
+                </tr>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="submit" id="btnSubmit" name="SB1" value="Update" />
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        }
+        <br /><br />
+        <a href="/">Back To Add New Page</a>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "AddNew";
+    Layout = "~/Views/_DemoLayout.cshtml";
+}
+<h2 >Add New Books</h2>
+<h3 >Book Fields</h3>
+
+@using (Html.BeginForm())
+{
+<table align="center">
+    <tr>
+        <td>
+            @Html.Label("Title :")
+        </td>
+        <td>
+            @Html.TextBox("Titles")
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.Label("Author :")
+        </td>
+        <td>
+            @Html.TextBox("Author")
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.Label("ISBN :")
+        </td>
+        <td>
+            @Html.TextBox("ISBN")
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.Label("Publisher :")
+        </td>
+        <td>
+            @Html.TextBox("Publisher")
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.Label("Year :")
+        </td>
+        <td>
+            @Html.TextBox("Year")
+        </td>
+    </tr>
+    <tfoot>
+        <tr>
+            <td></td>
+            <td>
+                <input  type="submit" id="btnSubmit" value="Do it" />
+            </td>
+        </tr>
+    </tfoot>
+</table>
+}
+<br />

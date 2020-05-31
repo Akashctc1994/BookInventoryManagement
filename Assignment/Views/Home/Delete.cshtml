@@ -1,0 +1,57 @@
+﻿@model Assignment.Models.Books
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+    <style>
+        body{
+            width:40%;
+            margin:auto;
+        }
+        h2{
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Delete Book Details</h2>
+        <hr />
+        <table align="center" class="table table-bordered">
+            <tr>
+                <td>Book Title :</td>
+                <td>@Model.Titles</td>
+            </tr>
+            <tr>
+                <td>Book Author :</td>
+                <td>@Model.Author</td>
+            </tr>
+            <tr>
+                <td>Book ISBN :</td>
+                <td>@Model.ISBN</td>
+            </tr>
+            <tr>
+                <td>Book Publisher :</td>
+                <td>@Model.Publisher</td>
+            </tr>
+            <tr>
+                <td>Book Year :</td>
+                <td>@Model.Year</td>
+            </tr>
+        </table>
+        <h3>Do You Want To Delete This Book Detail ? (Yes/No)</h3>
+        <form method="post">
+            <input type="submit" name="sb1" id="sb1" value="Delete" />
+            
+        </form>
+    </div>
+</body>
+</html>
